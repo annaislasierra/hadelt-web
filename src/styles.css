@@ -1,0 +1,57 @@
+/* Colores de marca */
+:root {
+    --bs-primary: #1b7fe1;
+    /* azul corporativo */
+}
+
+/* Amarillo anaranjado de contrapunto */
+.bg-accent {
+    background-color: #f9a825 !important;
+}
+
+.text-accent {
+    color: #f9a825 !important;
+}
+
+/* Ajustes suaves */
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform .6s ease, opacity .6s ease;
+    will-change: transform, opacity;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal.from-left {
+    transform: translateX(-40px);
+}
+
+.reveal.from-right {
+    transform: translateX(40px);
+}
+
+/* Subrayado animado */
+.u-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    transition: background-size .6s ease;
+}
+
+.u-underline.in-view {
+    background-size: 100% 2px;
+}
