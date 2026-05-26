@@ -1,57 +1,209 @@
 /* Colores de marca */
 :root {
-    --bs-primary: #1b7fe1;
-    /* azul corporativo */
+  --bs-primary: #1b7fe1;
+  /* azul corporativo */
 }
 
 /* Amarillo anaranjado de contrapunto */
 .bg-accent {
-    background-color: #f9a825 !important;
+  background-color: #f9a825 !important;
 }
 
 .text-accent {
-    color: #f9a825 !important;
+  color: #f9a825 !important;
 }
 
 /* Ajustes suaves */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .section {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
 /* Reveal on scroll */
 .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform .6s ease, opacity .6s ease;
-    will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+  will-change: transform, opacity;
 }
 
 .reveal.in-view {
-    opacity: 1;
-    transform: none;
+  opacity: 1;
+  transform: none;
 }
 
 .reveal.from-left {
-    transform: translateX(-40px);
+  transform: translateX(-40px);
 }
 
 .reveal.from-right {
-    transform: translateX(40px);
+  transform: translateX(40px);
 }
 
 /* Subrayado animado */
 .u-underline {
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    background-size: 0 2px;
-    transition: background-size .6s ease;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  transition: background-size 0.6s ease;
 }
 
 .u-underline.in-view {
-    background-size: 100% 2px;
+  background-size: 100% 2px;
+}
+
+/* Imagen hero */
+.hero-image-frame {
+  margin-left: 2rem;
+  overflow: visible;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+  .hero-image-frame {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .hero-image:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    transition: none;
+  }
+
+  .hero-image:hover {
+    transform: none;
+  }
+}
+
+/* Formulario */
+.tally-embed-wrapper {
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.tally-embed-wrapper iframe {
+  display: block;
+  width: 100%;
+  min-height: 799px;
+  border: 0;
+  background: transparent;
+}
+
+/* FAQ */
+.faq-section {
+  background-color: #f7f9fc;
+}
+
+.faq-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: 0 10px 28px rgba(17, 17, 17, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(27, 127, 225, 0.2);
+}
+
+.faq-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+  background-color: rgba(249, 168, 37, 0.16);
+  color: #f9a825;
+}
+
+.faq-card-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--bs-primary);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 8px 20px rgba(27, 127, 225, 0.14);
+}
+
+.faq-card-body {
+  padding: 1.5rem;
+}
+
+.faq-card-body h3 {
+  margin-bottom: 0.75rem;
+  color: #111;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.faq-card-body p {
+  margin-bottom: 0;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+  .faq-card-icon {
+    min-height: 92px;
+  }
+
+  .faq-card-body {
+    padding: 1.25rem;
+  }
+
+  .faq-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-card {
+    transition: none;
+  }
+
+  .faq-card:hover {
+    transform: none;
+  }
 }

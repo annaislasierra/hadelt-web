@@ -1,5 +1,6 @@
 // src/components/Navbar.jsx
 import React from "react";
+import logoNegativo from "../assets/logo-negativo.png";
 
 export default function Navbar() {
   return (
@@ -8,9 +9,13 @@ export default function Navbar() {
       style={{ backgroundColor: "#000" }}
     >
       <div className="container">
-        {/* Logo (placeholder) */}
-        <a className="navbar-brand fw-semibold" href="#inicio" aria-label="Ir al inicio">
-          LOGO
+        {/* Logo */}
+        <a className="navbar-brand" href="#inicio" aria-label="Ir al inicio">
+          <img
+            src={logoNegativo}
+            alt="Hadelt"
+            style={{ height: "80px", width: "auto", display: "block" }}
+          />
         </a>
 
         {/* Botón hamburguesa */}
@@ -35,18 +40,18 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#seccion2">
-                Sección 2
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#seccion3">
-                Sección 3
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="#contacto">
                 Contacto
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#ofrecemos">
+                ¿Qué te ofrecemos?
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#faq">
+                FAQ
               </a>
             </li>
           </ul>
